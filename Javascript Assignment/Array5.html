@@ -1,0 +1,43 @@
+<html>
+<head>
+</head>
+<body>
+  <script>
+  var myObj =
+  [
+    {'name':'Saurabh', 'age': 30, 'occupation': "Team Leader"},
+    {'name':'Anupriya', 'age': 32, 'occupation': "Team Leader"},
+    {'name':'Kalyani', 'age': 25, 'occupation': "Programmer"},
+    {'name':'Damodaran', 'age': 27, 'occupation': "Programmer"},
+    {'name':'Krishnakath', 'age': 22, 'occupation': "Programmer"},
+    {'name':'Venketraman', 'age': 28, 'occupation': "Programmer"}
+  ];
+
+  var a1=[];
+  var a2=[];
+
+  for(let value of myObj)
+  {
+    for(let item in value)
+    {
+      if(value[item]=="Team Leader")
+      {
+        a1.push({'name':value['name'],'age':value['age']});
+        break;
+      }
+      else if(value[item]=="Programmer")
+      {
+        a2.push({'name':value['name'],'age':value['age']});
+        break;
+      }
+    }
+  }
+
+var finalObj={'Team Leader':a1,'Programmer':a2};
+
+console.log(JSON.stringify(finalObj));
+
+
+  </script>
+</body>
+</html>

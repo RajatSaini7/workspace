@@ -1,0 +1,76 @@
+Break Statement:
+
+function testBreak(x) {
+  var i = 0;
+
+  while (i < 6) {
+    if (i == 3) {
+      break;
+    }
+    i += 1;
+  }
+
+  return i * x;
+}
+
+
+Break Statement(label):
+
+outer_block: {
+  inner_block: {
+    console.log('1');
+    break outer_block; // breaks out of both inner_block and outer_block
+    console.log(':-('); // skipped
+  }
+  console.log('2'); // skipped
+}
+
+
+
+
+block_1: {
+  console.log('1');
+  break block_2; // SyntaxError: label not found
+}
+
+block_2: {
+  console.log('2');
+}
+
+
+Continue:
+
+var i = 0;
+var n = 0;
+
+while (i < 5) {
+  i++;
+
+  if (i === 3) {
+    continue;
+  }
+
+  n += i;
+}
+
+
+Continue with label:
+
+var i = 0;
+var j = 8;
+
+checkiandj: while (i < 4) {
+  console.log("i: " + i);
+  i += 1;
+
+  checkj: while (j > 4) {
+    console.log("j: "+ j);
+    j -= 1;
+
+    if ((j % 2) == 0)
+      continue checkj;
+    console.log(j + " is odd.");
+  }
+  console.log("i = " + i);
+  console.log("j = " + j);
+}

@@ -1,0 +1,19 @@
+<html>
+<body>
+<script>
+function myFunc(obj)
+{
+  obj.make="Suzuki";
+}
+var car={make:"Honda",model:"Accord",year:1998};
+var x,y;
+
+x=car.make;
+myFunc(car);
+y=car.make;
+console.log(x);
+console.log(y);
+
+</script>
+</body>
+</html>
